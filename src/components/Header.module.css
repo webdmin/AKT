@@ -1,0 +1,396 @@
+/* General Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 160px;
+  z-index: 9999;
+  background-color: transparent;
+  transition: background-color 0.5s ease;
+}
+
+.navbarScrolled {
+  background-color: black !important;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.navbarHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 130px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto; /* Take only the necessary space for logo and brand */
+}
+
+.logoContainer img {
+  width: 80px !important;
+  height: 64px !important;
+}
+
+.navbarBrand {
+  margin-left: 10px;
+  font-weight: bold;
+  margin-bottom: 15;
+  color: white;
+  font-size: 24px;
+  transition: color 0.5s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbarToggle {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 20px;
+  right: 20px; /* Position the toggle bar in the top-right corner */
+}
+
+.navbarToggle.active .iconBar:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.navbarToggle.active .iconBar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbarToggle.active .iconBar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
+.navbarCollapse {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  bottom: 80;
+  left: 80;
+}
+
+.navbarNav {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+}
+
+.navbarNav li a {
+  font-weight: bold;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.navbarNav li a:hover {
+  color: #ff6f61;
+}
+
+/* Mobile Menu Styles */
+.navbarToggle.active .iconBar {
+  background-color: white;
+}
+
+.iconBar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Mobile Styles (below 1024px) */
+@media (max-width: 1024px) {
+  .navbarToggle {
+      display: block; /* Show the hamburger menu on small screens */
+      position: absolute;
+      top: 60px;
+      right: 30px; /* Position the toggle bar in the top-right corner */
+  }
+
+  .navbarCollapse {
+      display: none; /* Hide the navigation links by default */
+      width: 100%;
+      background-color: black;
+      position: absolute;
+      top: 130px;
+      left: 0;
+      right: 0;
+  }
+
+  .navbarCollapse.show {
+      display: block; /* Show the navigation links when toggled */
+  }
+
+  .navbarNav {
+      flex-direction: column;
+      gap: 0;
+      margin-top: 20px;
+  }
+
+  .navbarNav li a {
+      font-size: 18px;
+      padding: 15px;
+      text-align: center;
+      background: black;
+      align-items: center;
+      display: grid;
+      width: 150px;
+      height: auto;
+      left: 0;
+      position: relative;
+      padding: 10px 20px 10px 20px;
+      border-radius: 2px;
+  }
+}
+
+/* Desktop (above 1024px) */
+@media (min-width: 1025px) {
+  .navbarToggle {
+      display: none; /* Hide the hamburger menu on desktop and larger */
+  }
+
+  .navbarCollapse {
+      display: flex; /* Show the navbar items horizontally */
+  }
+
+  .navbarNav {
+      flex-direction: row;
+      justify-content: flex-end;
+  }
+
+  .navbarNav li a {
+      padding: 10px 20px;
+  }
+}
+
+/* Large Screen (laptops, desktops, TVs) */
+@media (min-width: 1024px) {
+  .navbarNav li a {
+      font-size: 18px; /* Increase font size for larger screens */
+  }
+}
+
+@media (min-width: 1800px) {
+  .logoContainer {
+      display: flex;
+      align-items: center;
+      flex: 0 1 auto; /* Take only the necessary space for logo and brand */
+      position: relative;
+      right: 150;
+  }
+
+  .navbarCollapse {
+      display: flex;
+      justify-content: flex-end; /* Right align the navbar items */
+      flex: 1; /* Allow the navbar links to take up remaining space */
+      position: relative;
+      bottom: 80;
+      left: 80;
+  }
+}
+
+/* Mobile and Laptop Styles (below 1024px) */
+@media (max-width: 1024px) {
+  
+
+  .navbarCollapse {
+      display: none; /* Hide the navigation links by default */
+      width: 100%;
+      background-color: black;
+      position: absolute;
+      top: 130px;
+      left: 0;
+      right: 0;
+  }
+
+  .navbarCollapse.show {
+      display: block; /* Show the navigation links when toggled */
+  }
+
+  .navbarNav {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+  }
+
+  .navbarNav li a {
+      font-size: 18px;
+      padding: 15px;
+      text-align: center;
+      background: black;
+      align-items: center;
+      display: grid;
+      width: 150px;
+      height: auto;
+      left: 835 !important;
+      top: -20px !important;
+      position: relative;
+      padding: 10px 20px 10px 20px;
+      border-radius: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  
+
+  .navbarCollapse {
+      display: none; /* Hide the navigation links by default */
+      width: 100%;
+      background-color: black;
+      position: absolute;
+      top: 130px;
+      left: 0;
+      right: 0;
+  }
+
+  .navbarCollapse.show {
+      display: block; /* Show the navigation links when toggled */
+  }
+
+  .navbarNav {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+  }
+
+  .navbarNav li a {
+      font-size: 18px;
+      padding: 15px;
+      text-align: center;
+      background: black;
+      align-items: center;
+      display: grid;
+      width: 150px;
+      height: auto;
+      left: 580 !important;
+      top: -20px !important;
+      position: relative;
+      padding: 10px 20px 10px 20px;
+      border-radius: 2px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .navbarNav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.navbarNav li a {
+    font-size: 18px;
+    padding: 15px;
+    text-align: center;
+    background: white;
+    color: black;
+    align-items: center;
+    display: grid;
+    width: 150px;
+    height: auto;
+    left: 250 !important;
+    top: -20px !important;
+    position: relative;
+    padding: 10px 20px 10px 20px;
+    border-radius: 6px;
+}
+.navbarNav li a:hover {
+  color: white;
+  background-color: #000000;
+}
+
+}
+
+
+/* For devices between 1024px and 1799px */
+@media (min-width: 768px) and (max-width: 1799px) {
+  .navbarToggle {
+      display: block; /* Keep the hamburger menu visible for these screen sizes */
+      position: absolute;
+      top: 60px;
+      right: 100px; /* Position the toggle bar in the top-right corner */
+  }
+
+  .navbarCollapse {
+      display: none;
+  }
+
+  .navbarCollapse.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  .navbarNav {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+  }
+
+  .navbarNav li a {
+      font-size: 18px;
+      padding: 15px;
+      text-align: center;
+      background-color: white;
+      border-radius: 6px;
+      color: black;
+      align-items: center;
+      display: flex;
+      width: 150px;
+      left: 1015px;
+      top: 45px;
+      position: relative;
+      padding-left: 38;
+  }
+
+  .navbarNav li a:hover {
+      background-color: #000000;
+      color: #fff;
+  }
+}
+
+/* For larger screens (1800px and above) */
+@media (min-width: 1800px) {
+  .navbarToggle {
+      display: none; /* Hide the toggle button for large screens */
+  }
+
+  .navbarCollapse {
+      display: flex; /* Show the navbar items horizontally */
+      justify-content: flex-end;
+  }
+
+  .navbarNav {
+      flex-direction: row;
+      justify-content: flex-end;
+  }
+
+  .navbarNav li a {
+      padding: 10px 20px;
+  }
+}
